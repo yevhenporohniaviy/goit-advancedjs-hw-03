@@ -52,7 +52,6 @@ async function handleSelectChange(result) {
   loader.style.display = 'block';
   try {
     const response = await fetchCatByBreed(result[0].id);
-    console.log(!response.length);
     if (!response.length) throw new Error('Please, select another breed!');
 
     catInfo.insertAdjacentHTML('beforeend', createCatDetailMark(response[0]));
